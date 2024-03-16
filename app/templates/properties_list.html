@@ -2,12 +2,14 @@
 
 
 {% block main %}
+{% include 'flash_messages.html' %}
 <div id="properties">
   <h1 class="page-header">Properties</h1>
   <div class="property-grid">
       {% for property in properties %}
       <div class="property-card">
-        <img src="{{url_for('get_image', filename=property.photo)}}" alt="Image">
+          <img src="{{url_for('get_image', filename=property.photo)}}" alt="Image">
+        
         <p class="property-title">{{property.title}}</p>
         <p class="location"><i class="fas fa-map-marker-alt"></i> {{ property.location }}</p>
         <p class="price">${{ property.price }}</p>

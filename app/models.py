@@ -5,10 +5,10 @@ class Property(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
     title = db.Column(db.String(80))
-    numBedrooms = db.Column(db.Integer)
-    numBathrooms = db.Column(db.Integer)
+    numBedrooms = db.Column(db.String(80))
+    numBathrooms = db.Column(db.String(80))
     location = db.Column(db.String(128))
-    price = db.Column(db.Float)
+    price = db.Column(db.String(80))
     propertyType = db.Column(db.String(20))
     description = db.Column(db.String(1000))
     photo = db.Column(db.String(128))

@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 7c201a7b9e4d
+Revision ID: b7ce3a1f107b
 Revises: 
-Create Date: 2024-03-11 18:29:31.734825
+Create Date: 2024-03-15 23:17:18.134061
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '7c201a7b9e4d'
+revision = 'b7ce3a1f107b'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,10 +21,10 @@ def upgrade():
     op.create_table('properties',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('title', sa.String(length=80), nullable=True),
-    sa.Column('numBedrooms', sa.Integer(), nullable=True),
-    sa.Column('numBathrooms', sa.Integer(), nullable=True),
+    sa.Column('numBedrooms', sa.String(length=80), nullable=True),
+    sa.Column('numBathrooms', sa.String(length=80), nullable=True),
     sa.Column('location', sa.String(length=128), nullable=True),
-    sa.Column('price', sa.Float(), nullable=True),
+    sa.Column('price', sa.String(length=80), nullable=True),
     sa.Column('propertyType', sa.String(length=20), nullable=True),
     sa.Column('description', sa.String(length=1000), nullable=True),
     sa.Column('photo', sa.String(length=128), nullable=True),
