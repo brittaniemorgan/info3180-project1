@@ -1,19 +1,27 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<div class="property-dets">
-    <div>
-        <img src="{{url_for('get_image', filename=propertyRequested.photo)}}" alt="Image">
-    </div>
-    <div>
-        <h1 class="page-header">{{propertyRequested.title}}</h1>
-        <p>{{propertyRequested.price}}</p>
-        <p>{{propertyRequested.properyType}}</p>
-        <p>{{propertyRequested.descriptiion}}</p>
-        <p>{{propertyRequested.numBedrooms}}</p>
-        <p>{{propertyRequested.numBathrooms}}</p>
-        <p>{{propertyRequested.location}}</p>
-        <button type="button" class="btn btn-success">Email Reader</button>
+<div class="property-container">
+    <div class="property-dets">
+        <div>
+            <img src="{{url_for('get_image', filename=propertyRequested.photo)}}" alt="Image" class="det-img">
+        </div>
+        <div class="info-container">
+            <p class="property-head">{{propertyRequested.title}}</p>
+            <div class="two-grid">
+                <p class="price">${{propertyRequested.price}}</p>
+                <p class="property-type">{{propertyRequested.propertyType}}</p>
+            </div>
+            <p>{{propertyRequested.description}}</p>
+            <div class="two-grid">
+                <p><i class="fas fa-bed"></i> {{propertyRequested.numBedrooms}} Bedrooms</p>
+                <p><i class="fas fa-shower"></i> {{propertyRequested.numBathrooms}} Bathrooms</p>
+            </div>
+            
+            <p><i class="fas fa-map-marker-alt"></i> {{propertyRequested.location}}</p>
+            <button type="button" class="email-btn">Email Reader</button>
+        </div>
     </div>
 </div>
+
 {% endblock %}
