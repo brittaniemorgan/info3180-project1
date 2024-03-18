@@ -14,6 +14,7 @@ from app.models import Property
 from werkzeug.utils import secure_filename
 
 
+
 ###
 # Routing for your application.
 ###
@@ -59,9 +60,13 @@ def listProperties():
 
 @app.route("/properties/<propertyRequested>")
 def getProperty(propertyRequested):
-    query = db.select(Property).filter_by(id = propertyRequested)
-    propertyRequested = db.session.execute(query).scalar_one()
-    return render_template("property_details.html", propertyRequested = propertyRequested)
+    try:
+        query = db.select(Property).filter_by(id = propertyRequested)
+        propertyRequested = db.session.execute(query).scalar_one()
+        return render_template("property_details.html", propertyRequested = propertyRequested)
+    except: 
+        flash('Property not found', 'danger')
+        return redirect(url_for('listProperties'))
 
 
 @app.route('/uploads/<filename>')

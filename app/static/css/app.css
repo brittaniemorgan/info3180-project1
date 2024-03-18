@@ -57,7 +57,7 @@ h1{
     width: 100%; 
     text-align: center; 
     padding: 10px; 
-    background-color: #16d5b9; 
+    background-color: #12b79f; 
     color: white; 
     text-decoration: none;
     margin-top: 20px;
@@ -69,7 +69,6 @@ h1{
     border-style: solid;
     border-width: 1px;
     border: 2px solid rgba(0, 0, 0, 0.1);
-    width: 70%;
     padding: 0px;
 }
 
@@ -88,14 +87,14 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0px;
-    width: 60%;
+    width: 50%;
 }
 
 .email-btn {
     display: block;
     text-align: center; 
     padding: 10px; 
-    background-color: #16d5b9; 
+    background-color: #12b79f; 
     color: white; 
     text-decoration: none;
     border-style: none;
@@ -137,3 +136,7 @@ h1{
     padding: 25px;
     margin-top: 20px;
 }
+
+.bg-custom {
+    background-color: #12b79f;
+  }
