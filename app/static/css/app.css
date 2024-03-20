@@ -90,6 +90,13 @@ h1{
     width: 50%;
 }
 
+.two-grid-spaced{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 70px;
+    width: 50%;
+}
+
 .email-btn {
     display: block;
     text-align: center; 
